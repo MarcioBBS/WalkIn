@@ -1,3 +1,5 @@
+//GRID LAYOUT SET UP
+
 .sidebar {
     background-color: $color-primary;
     grid-column: sidebar-start / sidebar-end;
@@ -19,13 +21,14 @@
 
     margin: 15rem 0;
 
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: grid;    
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
     grid-gap: 6rem;
+    
+    align-items: start;
 }
 
 .story {
-
     grid-column: full-start / full-end;
     padding: 0;
 
