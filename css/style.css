@@ -26,11 +26,62 @@ body {
   font-weight: 300;
   line-height: 1.6; }
 
-.heading-4 {
-  font-size: 1.9rem;
+.heading {
   font-family: "Josefin Sans", sans-serif;
-  font-weight: 400;
-  color: #352424; }
+  font-weight: 400; }
+  .heading-2 {
+    font-size: 4rem;
+    font-style: italic;
+    line-height: 1;
+    color: #352424; }
+  .heading-3 {
+    font-size: 1.6rem;
+    color: #c40000;
+    text-transform: uppercase; }
+  .heading-4 {
+    font-size: 1.9rem;
+    color: #352424; }
+
+.u-center-text {
+  text-align: center !important; }
+
+.u-margin-bottom-small {
+  margin-bottom: 1.5rem !important; }
+
+.u-margin-bottom-medium {
+  margin-bottom: 2.5rem !important; }
+
+.u-margin-bottom-big {
+  margin-bottom: 3.5rem !important; }
+
+.u-margin-bottom-huge {
+  margin-bottom: 6rem !important; }
+
+.u-margin-top-small {
+  margin-top: 1.5rem !important; }
+
+.u-margin-top-medium {
+  margin-top: 2.5rem !important; }
+
+.u-margin-top-big {
+  margin-top: 3.5rem !important; }
+
+.u-margin-top-huge {
+  margin-top: 6rem !important; }
+
+.btn {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  background-color: #c40000;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  padding: 1.8rem 3rem;
+  cursor: pointer;
+  transition: all .3s; }
+  .btn:hover {
+    background-color: #910505; }
 
 .feature {
   display: grid;
@@ -50,7 +101,21 @@ body {
   background-color: #000; }
 
 .story__content {
-  background-color: #aaa; }
+  background-color: #aaa;
+  padding: 6rem 7.5vw;
+  /* It could be done with flex too
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        */
+  display: grid;
+  align-items: center;
+  justify-items: start; }
+
+.story__text {
+  font-size: 1.5rem;
+  font-style: italic; }
 
 .sidebar {
   background-color: #c40000;

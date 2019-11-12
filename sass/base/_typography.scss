@@ -5,23 +5,29 @@ body {
     line-height: 1.6;
 }
 
-.heading {    
+.heading {
+    font-family: $font-display;
+    font-weight: 400;
 
     &-1{
 
     }
 
     &-2 {
-
+        font-size: 4rem;
+        font-style: italic;
+        line-height: 1;
+        @include heading-color(dark);
     }
 
     &-3 {
-
+        font-size: 1.6rem;
+        color: $color-primary;
+        text-transform: uppercase;
     }
 
     &-4 {
         font-size: 1.9rem;   
-        @include heading-basic;     
         @include heading-color(dark);
     }
 }

@@ -6,5 +6,23 @@
 
     &__content {
         background-color: $color-grey-light-2;
+        padding: 6rem 7.5vw;
+
+       /* It could be done with flex too
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        */
+
+        display: grid;        
+        align-items: center;
+        justify-items: start;
+
+        }
+
+    &__text {
+        font-size: 1.5rem;
+        font-style: italic;
     }
 }  
