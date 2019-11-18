@@ -105,7 +105,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr; }
   .story__pictures {
-    background-image: linear-gradient(rgba(196, 0, 0, 0.5), rgba(196, 0, 0, 0.5)), url(../../img/back.jpg);
+    background-image: linear-gradient(rgba(16, 29, 44, 0.8), rgba(16, 29, 44, 0.8)), url(../../img/back.jpg);
     background-size: cover;
     display: grid;
     grid-template-rows: repeat(6, [row-start] 1fr [row-end]);
@@ -124,7 +124,7 @@ body {
       box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.2); }
   .story__content {
     background-color: #f0eeee;
-    padding: 15rem 7.5vw;
+    padding: 0 8vw;
     /* It could be done with flexbox too
         display: flex;
         flex-direction: column;
@@ -132,13 +132,61 @@ body {
         align-items: flex-start;
         */
     display: grid;
-    grid-template-rows: repeat(auto-fit, minmax(8rem, 1fr));
-    grid-gap: 2rem;
-    align-items: center;
+    align-content: center;
     justify-items: start; }
     .story__content-text {
       font-size: 1.5rem;
-      font-style: italic; }
+      font-style: italic;
+      margin-bottom: 4rem; }
+
+.home {
+  background-color: #f0eeee;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2.5rem; }
+  .home__img {
+    width: 100%;
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+    z-index: 1; }
+  .home__like {
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
+    height: 2rem;
+    width: 2rem;
+    fill: #c40000;
+    z-index: 2;
+    justify-self: end;
+    margin: 1rem; }
+  .home__name {
+    grid-row: 1 / 2;
+    grid-column: 1 / -1;
+    justify-self: center;
+    align-self: end;
+    z-index: 3;
+    width: 80%;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 1.6rem;
+    text-align: center;
+    background-color: #101d2c;
+    color: #fff;
+    font-weight: 400;
+    padding: 1.25rem;
+    transform: translateY(50%); }
+  .home__location, .home__rooms {
+    margin-top: 2.5rem; }
+  .home__location, .home__rooms, .home__area, .home__price {
+    font-size: 1.5rem;
+    margin-left: 2rem;
+    display: flex;
+    align-items: center; }
+    .home__location svg, .home__rooms svg, .home__area svg, .home__price svg {
+      fill: #c40000;
+      height: 2rem;
+      width: 2rem;
+      margin-right: 1rem; }
+  .home__btn {
+    grid-column: 1 / -1; }
 
 .sidebar {
   background-color: #c40000;
@@ -155,19 +203,21 @@ body {
 
 .features {
   grid-column: center-start / center-end;
-  margin: 15rem 0;
+  margin: 12rem 0;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
   grid-gap: 6rem;
   align-items: start; }
 
 .story {
-  grid-column: full-start / full-end;
-  padding: 0; }
+  grid-column: full-start / full-end; }
 
 .homes {
-  background-color: #910505;
-  grid-column: center-start / center-end; }
+  grid-column: center-start / center-end;
+  margin: 12rem 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  grid-gap: 7rem; }
 
 .gallery {
   background-color: #352424;

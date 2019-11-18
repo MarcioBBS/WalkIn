@@ -17,7 +17,7 @@ body {
 .container {
     display: grid;
 
-    //  [80vh: header] [min-content: features] [40vw: story] [3(min-content): homes, galerary, footer]
+    // [80vh: header] [min-content: features] [40vw: story] [3(min-content): homes, galerary, footer]
     grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
 
     /*
