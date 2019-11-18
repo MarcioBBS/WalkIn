@@ -1,5 +1,4 @@
 .feature {    
-    
     display: grid;
     grid-template-columns: min-content 1fr;
 
@@ -9,9 +8,12 @@
     &__icon {
         width: 4.5rem;
         height: 4.5rem;
-        fill: $color-primary;
+        fill: $color-primary; // fill for svg files
+        
+        // grid-row: 1 / -1;  This does not work because -1 only works for explict grid
         grid-row: 1 / span 2;
 
+        //pushing the icon to the top
         transform: translateY(-1rem);
     }
 

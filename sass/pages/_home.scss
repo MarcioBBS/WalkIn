@@ -25,15 +25,13 @@
     grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
     grid-gap: 6rem;
     
+    //push the content to the top.
     align-items: start;
 }
 
 .story {
     grid-column: full-start / full-end;
-    padding: 0;
-
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    padding: 0;    
 }
 
 .homes {

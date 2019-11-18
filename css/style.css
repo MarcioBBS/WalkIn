@@ -14,6 +14,10 @@ body {
 .container {
   display: grid;
   grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
+  /*
+    [8rem: sidebar] 
+    [1fr and 1fr: to keep the remaning 8 columns in the center]
+    */
   grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end]; }
 
 ::selection {
@@ -97,25 +101,44 @@ body {
   .feature__text {
     font-size: 1.7rem; }
 
-.story__pictures {
-  background-color: #000; }
-
-.story__content {
-  background-color: #aaa;
-  padding: 6rem 7.5vw;
-  /* It could be done with flex too
+.story {
+  display: grid;
+  grid-template-columns: 1fr 1fr; }
+  .story__pictures {
+    background-image: linear-gradient(rgba(196, 0, 0, 0.5), rgba(196, 0, 0, 0.5)), url(../../img/back.jpg);
+    background-size: cover;
+    display: grid;
+    grid-template-rows: repeat(6, [row-start] 1fr [row-end]);
+    grid-template-columns: repeat(6, [col-start] 1fr [col-end]);
+    align-items: center; }
+    .story__pictures--1 {
+      width: 100%;
+      grid-row: row-start 2 / row-end 5;
+      grid-column: col-start 2 / col-end 5;
+      box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.1); }
+    .story__pictures--2 {
+      width: 115%;
+      grid-row: row-start 4 / row-end 5;
+      grid-column: col-start 4/ col-end 7;
+      z-index: 1;
+      box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.2); }
+  .story__content {
+    background-color: #f0eeee;
+    padding: 15rem 7.5vw;
+    /* It could be done with flexbox too
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
         */
-  display: grid;
-  align-items: center;
-  justify-items: start; }
-
-.story__text {
-  font-size: 1.5rem;
-  font-style: italic; }
+    display: grid;
+    grid-template-rows: repeat(auto-fit, minmax(8rem, 1fr));
+    grid-gap: 2rem;
+    align-items: center;
+    justify-items: start; }
+    .story__content-text {
+      font-size: 1.5rem;
+      font-style: italic; }
 
 .sidebar {
   background-color: #c40000;
@@ -140,9 +163,7 @@ body {
 
 .story {
   grid-column: full-start / full-end;
-  padding: 0;
-  display: grid;
-  grid-template-columns: 1fr 1fr; }
+  padding: 0; }
 
 .homes {
   background-color: #910505;
