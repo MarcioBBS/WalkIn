@@ -1,0 +1,36 @@
+.sidebar {
+    
+    display: flex;
+    justify-content: center;
+
+    .nav-btn {
+        border: none;
+        border-radius: 0;
+        background-color: $color-grey-light-1;
+        height: 2px;
+        width: 4.5rem;
+        margin-top: 4rem;
+        transition: all .3s;
+        cursor: pointer;
+
+        &::before,
+        &::after {
+            content: "";
+            display: block;
+            background-color: $color-grey-light-1;
+            height: 2px;
+            width: 4.5rem;
+        }
+
+        &:hover::before {
+            transform: translateY(-1.7rem);
+        }
+
+        &:hover::after {
+            transform: translateY(1.7rem);
+        }
+
+        &::before { transform: translateY(-1.5rem); }
+        &::after { transform: translateY(1.5rem); }
+    }
+}
