@@ -317,10 +317,6 @@ body {
       background-color: #faf9f9;
       height: 2px;
       width: 4.5rem; }
-    .sidebar .nav-btn:hover::before {
-      transform: translateY(-1.7rem); }
-    .sidebar .nav-btn:hover::after {
-      transform: translateY(1.7rem); }
     .sidebar .nav-btn::before {
       transform: translateY(-1.5rem); }
     .sidebar .nav-btn::after {

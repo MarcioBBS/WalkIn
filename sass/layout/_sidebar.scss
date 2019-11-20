@@ -22,15 +22,7 @@
             width: 4.5rem;
         }
 
-        &:hover::before {
-            transform: translateY(-1.7rem);
-        }
-
-        &:hover::after {
-            transform: translateY(1.7rem);
-        }
-
         &::before { transform: translateY(-1.5rem); }
         &::after { transform: translateY(1.5rem); }
-    }
+    }        
 }
