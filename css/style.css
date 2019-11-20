@@ -210,10 +210,11 @@ body {
     width: 3.5rem;
     fill: #fff;
     display: inline-block;
-    margin-left: 2rem;
     transition: all .3s; }
     .footer__svg > *:hover {
       fill: #eb0f0f; }
+  .footer__svg > *:not(:first-child) {
+    margin-left: 2rem; }
   .footer__img {
     display: grid;
     grid-template-rows: repeat(2, 1fr);

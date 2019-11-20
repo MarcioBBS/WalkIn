@@ -8,13 +8,16 @@
         height: 3.5rem;
         width: 3.5rem;
         fill: $color-white;
-        display: inline-block;
-        margin-left: 2rem;
+        display: inline-block;        
         transition: all .3s;
 
         &:hover {
             fill: $color-primary-light;
         }
+    }
+
+    &__svg > *:not(:first-child) {
+        margin-left: 2rem;
     }
 
     &__img {
