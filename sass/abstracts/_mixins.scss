@@ -7,3 +7,51 @@
         color: $color-grey-dark-1;
     }
 }
+
+// MEDIA QUERY MANAGER
+/* 
+0 - 414px:     Phone small
+414 - 600px:   Phone
+600 - 700px:   Phone landscape
+700 - 900px:   Tablet portrait
+900 - 1000px:  Tablet medium
+1000 - 1030px: Tablet landscape
+1030 - 1200px: Desktop medium 
+[1200 - 1800]: Desktop. Where the normal styles apply - Where the website was first developed.
+1800px +   :   Big desktop
+
+$breakpoint argument choices:
+- phone-small
+- phone-medium
+- phone
+- phone-land
+- tab-port
+- tab-med
+- tab-land
+- med-desktop
+- big-desktop
+
+RESPONSIVE CHANGING ORDER: Base + typography + general layout + grid > page layout > components
+
+1em = 16px
+
+NOTE: In media queries rem and em are not affected by the root font-size settings. 
+      It means that 1rem or 1em are always equal to the font-size default browser value, which is 16px.
+
+Why using em instead of rem? Because rem's failed to work as intended in some browsers
+*/
+
+@mixin respond($breakpoint) {
+
+    @if $breakpoint == medium-device {
+        @media only screen and (max-width: 48em) { @content }; //768 - 768/16 = 48
+    }
+
+    @if $breakpoint == tab-port {
+        @media only screen and (max-width:56.25em) {@content}; //900px - 900/16 = 56.25
+    }
+
+    @if $breakpoint == tab-land {
+        @media only screen and (max-width: 75em) { @content }; //1200px  - 1200/16 = 75
+    }   
+}
