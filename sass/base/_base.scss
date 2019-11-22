@@ -8,19 +8,6 @@
 
 html {
     font-size: 62.5%; //  10px/16px = 62.5. now 1rem = 10px!
-
-    // MEDIA QUERIES
-
-    // The order of the media queries matter. As this project was built first for desktop, then include the large media queries first. 
-
-    @include respond(tab-land) { // Setting the font-size of 9px
-        font-size: 56.25%; // 1em = 9px (9/16 = 0.5625)
-    }
-
-    // The font-size of 50% also applies/includes for phone as the max-width is 900px/56.25em
-    @include respond(tab-port) { // Setting the font-size of 8px
-        font-size: 50%; // 1em = 8px (8/16 = 0.5)
-    }
 }
 
 body {
@@ -33,15 +20,11 @@ body {
     // [80vh: header] [min-content: features] [40vw: story] [3(min-content): homes, galerary, footer]
     grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
 
-      
-    //[1fr and 1fr: to keep the remaning 8 columns in the center]
+    /*
+    [8rem: sidebar] 
+    [1fr and 1fr: to keep the remaning 8 columns in the center]
+    */
     grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
-
-    @include respond(tab-port) {
-        grid-template-rows: [sidebar-start] 6rem [sidebar-end] 80vh min-content 40vw repeat(3, min-content);
-
-        grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
-    }
 }
 
 ::selection {

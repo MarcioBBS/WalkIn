@@ -1,12 +1,7 @@
 .sidebar {
     
     display: flex;
-    justify-content: center; 
-    
-    @include respond(tab-port) {
-        justify-content: flex-end;
-        align-items: center;
-    }
+    justify-content: center;
 
     .nav-btn {
         border: none;
@@ -28,14 +23,6 @@
         }
 
         &::before { transform: translateY(-1.5rem); }
-        &::after { transform: translateY(1.3rem); }
-
-        @include respond(tab-port) {
-            margin-top: 0;
-            margin-right: 2.5rem;
-
-            &::before { transform: translateY(-1.2rem); }
-            &::after { transform: translateY(1.0rem); }
-        }
-    }    
+        &::after { transform: translateY(1.5rem); }
+    }        
 }
