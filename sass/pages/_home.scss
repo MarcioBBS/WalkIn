@@ -13,11 +13,19 @@
 
 .header {    
     grid-column: full-start / col-end 6;
+
+    @include respond(tab-small) {
+        grid-column: full-start / full-end;
+    }
 }
 
 .realtors {
     background-color: $color-secondary;
     grid-column: col-start 7 / full-end;
+
+    @include respond(tab-small) {
+        grid-column: full-start / full-end;
+    }
 }
 
 .features {    
@@ -34,7 +42,7 @@
 }
 
 .story {
-    grid-column: full-start / full-end;       
+    grid-column: full-start / full-end;
 }
 
 .homes {    

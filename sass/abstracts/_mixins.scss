@@ -31,8 +31,6 @@ $breakpoint argument choices:
 - med-desktop
 - big-desktop
 
-RESPONSIVE CHANGING ORDER: Base + typography + general layout + grid > page layout > components
-
 1em = 16px
 
 NOTE: In media queries rem and em are not affected by the root font-size settings. 
@@ -43,8 +41,16 @@ Why using em instead of rem? Because rem's failed to work as intended in some br
 
 @mixin respond($breakpoint) {
 
-    @if $breakpoint == medium-device {
-        @media only screen and (max-width: 48em) { @content }; //768 - 768/16 = 48
+    @if $breakpoint == phone {
+        @media only screen and (max-width: 26em) { @content }; // 414px - 414/16 =~ 26
+    }
+
+    @if $breakpoint == phone-land {
+        @media only screen and (max-width: 36em) { @content }; // 576px - 576/16 = 36
+    }
+
+    @if $breakpoint == tab-small {
+        @media only screen and (max-width: 48em) { @content }; //768px - 768/16 = 48
     }
 
     @if $breakpoint == tab-port {
