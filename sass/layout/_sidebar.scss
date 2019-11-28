@@ -1,41 +1,61 @@
 .sidebar {
     
-    display: flex;
-    justify-content: center; 
+    display: grid;
+    justify-content: center;
+    align-items: start;
     
     @include respond(tab-port) {
-        justify-content: flex-end;
+        justify-content: end;
         align-items: center;
     }
 
-    .nav-btn {
-        border: none;
-        border-radius: 0;
-        background-color: $color-grey-light-1;
-        height: 2px;
-        width: 4.5rem;
-        margin-top: 4rem;
-        transition: all .3s;
+    &__checkbox {
+        display: none;
+    }
+
+    &__button {
+        height: 5rem;
+        width: 5rem;
         cursor: pointer;
+        text-align: center;
+        position: relative;
+        top: 1.5rem;
+    }
+
+    &__icon-hamburger {
+        position: relative;
+        top: 2.2rem;
+
+        @include respond(tab-port) {
+            top: 1.5rem;
+            margin-left: -3rem;
+        }
+
+        &,
+        &::before,
+        &::after {
+            width: 4.2rem;
+            height: 2px;
+            background-color: $color-white;
+            display: inline-block;
+            border-radius: 1rem;
+        }
 
         &::before,
         &::after {
             content: "";
-            display: block;
-            background-color: $color-grey-light-1;
-            height: 2px;
-            width: 4.5rem;
+            position: absolute;            
+            left: 0;
+            translate: all .3s;
         }
 
-        &::before { transform: translateY(-1.5rem); }
-        &::after { transform: translateY(1.3rem); }
+        &::before { top: -1.2rem; }
+        &::after { top: 1.2rem; }
+    }
 
-        @include respond(tab-port) {
-            margin-top: 0;
-            margin-right: 2.5rem;
-
-            &::before { transform: translateY(-1.2rem); }
-            &::after { transform: translateY(1.0rem); }
-        }
-    }    
+    // when hover the button then push the top line to the top
+    &__button:hover &__icon-hamburger::before { top: -1.3rem; }
+    
+    // when hover the button then push the bottom line to the bottom
+    &__button:hover &__icon-hamburger::after { top: 1.3rem; }
 }

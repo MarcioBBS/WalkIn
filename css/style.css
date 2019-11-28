@@ -469,39 +469,48 @@ body {
       justify-self: center; } }
 
 .sidebar {
-  display: flex;
-  justify-content: center; }
+  display: grid;
+  justify-content: center;
+  align-items: start; }
   @media only screen and (max-width: 56.25em) {
     .sidebar {
-      justify-content: flex-end;
+      justify-content: end;
       align-items: center; } }
-  .sidebar .nav-btn {
-    border: none;
-    border-radius: 0;
-    background-color: #faf9f9;
-    height: 2px;
-    width: 4.5rem;
-    margin-top: 4rem;
-    transition: all .3s;
-    cursor: pointer; }
-    .sidebar .nav-btn::before, .sidebar .nav-btn::after {
-      content: "";
-      display: block;
-      background-color: #faf9f9;
-      height: 2px;
-      width: 4.5rem; }
-    .sidebar .nav-btn::before {
-      transform: translateY(-1.5rem); }
-    .sidebar .nav-btn::after {
-      transform: translateY(1.3rem); }
+  .sidebar__checkbox {
+    display: none; }
+  .sidebar__button {
+    height: 5rem;
+    width: 5rem;
+    cursor: pointer;
+    text-align: center;
+    position: relative;
+    top: 1.5rem; }
+  .sidebar__icon-hamburger {
+    position: relative;
+    top: 2.2rem; }
     @media only screen and (max-width: 56.25em) {
-      .sidebar .nav-btn {
-        margin-top: 0;
-        margin-right: 2.5rem; }
-        .sidebar .nav-btn::before {
-          transform: translateY(-1.2rem); }
-        .sidebar .nav-btn::after {
-          transform: translateY(1rem); } }
+      .sidebar__icon-hamburger {
+        top: 1.5rem;
+        margin-left: -3rem; } }
+    .sidebar__icon-hamburger, .sidebar__icon-hamburger::before, .sidebar__icon-hamburger::after {
+      width: 4.2rem;
+      height: 2px;
+      background-color: #fff;
+      display: inline-block;
+      border-radius: 1rem; }
+    .sidebar__icon-hamburger::before, .sidebar__icon-hamburger::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      translate: all .3s; }
+    .sidebar__icon-hamburger::before {
+      top: -1.2rem; }
+    .sidebar__icon-hamburger::after {
+      top: 1.2rem; }
+  .sidebar__button:hover .sidebar__icon-hamburger::before {
+    top: -1.3rem; }
+  .sidebar__button:hover .sidebar__icon-hamburger::after {
+    top: 1.3rem; }
 
 .sidebar {
   background-color: #c40000;
