@@ -1,0 +1,61 @@
+.sidebar {
+    
+    display: grid;
+    justify-content: center;
+    align-items: start;
+    
+    @include respond(tab-port) {
+        justify-content: end;
+        align-items: center;
+    }
+
+    &__checkbox {
+        display: none;
+    }
+
+    &__button {
+        height: 5rem;
+        width: 5rem;
+        cursor: pointer;
+        text-align: center;
+        position: relative;
+        top: 1.5rem;
+    }
+
+    &__icon-hamburger {
+        position: relative;
+        top: 2.2rem;
+
+        @include respond(tab-port) {
+            top: 1.5rem;
+            margin-left: -3rem;
+        }
+
+        &,
+        &::before,
+        &::after {
+            width: 4.2rem;
+            height: 2px;
+            background-color: $color-white;
+            display: inline-block;
+            border-radius: 1rem;
+        }
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;            
+            left: 0;
+            translate: all .3s;
+        }
+
+        &::before { top: -1.2rem; }
+        &::after { top: 1.2rem; }
+    }
+
+    // when hover the button then push the top line to the top
+    &__button:hover &__icon-hamburger::before { top: -1.3rem; }
+    
+    // when hover the button then push the bottom line to the bottom
+    &__button:hover &__icon-hamburger::after { top: 1.3rem; }
+}

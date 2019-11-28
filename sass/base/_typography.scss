@@ -1,0 +1,35 @@
+body {
+    font-family: $font-primary;
+    color: $color-grey-dark-2;
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+.heading {
+    font-family: $font-display;
+    font-weight: 400;
+
+    &-1{
+        font-size: 4.5rem;
+        color: $color-grey-light-1;
+        line-height: 1;
+    }
+
+    &-2 {
+        font-size: 4rem;
+        font-style: italic;
+        line-height: 1;
+        @include heading-color(dark);
+    }
+
+    &-3 {
+        font-size: 1.6rem;
+        color: $color-primary;
+        text-transform: uppercase;
+    }
+
+    &-4 {
+        font-size: 1.9rem;   
+        @include heading-color(dark);
+    }
+}

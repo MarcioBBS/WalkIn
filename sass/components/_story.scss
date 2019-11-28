@@ -1,0 +1,78 @@
+.story {    
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    @include respond(tab-small) {
+        grid-template-columns: none;
+        grid-template-rows: repeat(2, min-content);
+    }
+
+    &__pictures {       
+        background-image: linear-gradient(rgba($color-secondary, .8), rgba($color-secondary, .8)), url(../../img/back.jpg);
+        background-size: cover;
+        background-position: center;
+
+        display: grid;
+        grid-template-rows: repeat(6, [row-start] 1fr [row-end]);
+        grid-template-columns: repeat(6, [col-start] 1fr [col-end]);
+        align-items: center;
+
+        @include respond(tab-small) {
+            grid-row: 2 / 3;
+            padding: 5rem;
+        }
+        
+            &--1 {
+                width: 100%;
+                grid-row: row-start 2 / row-end 5;
+                grid-column: col-start 2 / col-end 5;
+                box-shadow: 0 2rem 5rem rgba($color-black, .1);
+
+                @include respond(tab-small) {
+                    grid-column: 1 / 5;
+                    grid-row: 1 / -1;
+                }
+            }
+
+            &--2 {
+                width: 115%;
+                grid-row: row-start 4 / row-end 5;
+                grid-column: col-start 4/ col-end 7;
+                z-index: 1;
+                box-shadow: 0 2rem 5rem rgba($color-black, .2);
+
+                @include respond(tab-small) {
+                    grid-row: 1 / -1;
+                    width: 100%;
+                }
+            }
+    }
+
+    &__content {
+        background-color: $color-grey-light-3;        
+        padding: 0 8vw;
+
+       /* It could be done with flexbox too
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        */
+ 
+        display: grid;
+        align-content: center;
+        justify-items: start;
+
+
+        @include respond(tab-small) {
+            grid-row: 1 / 2;
+            padding: 6vh 8vw;
+        }
+
+        &-text {
+            font-size: 1.5rem;
+            font-style: italic;
+            margin-bottom: 4rem;
+        }
+    }
+}  
