@@ -10,33 +10,18 @@
 
 // MEDIA QUERY MANAGER
 /* 
-0 - 414px:     Phone small
-414 - 600px:   Phone
-600 - 700px:   Phone landscape
-700 - 900px:   Tablet portrait
-900 - 1000px:  Tablet medium
-1000 - 1030px: Tablet landscape
-1030 - 1200px: Desktop medium 
-[1200 - 1800]: Desktop. Where the normal styles apply - Where the website was first developed.
-1800px +   :   Big desktop
 
 $breakpoint argument choices:
-- phone-small
-- phone-medium
-- phone
-- phone-land
-- tab-port
-- tab-med
-- tab-land
-- med-desktop
-- big-desktop
+- phone : 414px
+- phone-land : 576px
+- tab-small : 768px
+- tab-port : 900px
+- tab-land : 1200px
 
-1em = 16px
+NOTES:
+1em and 1rem = 16px
+16px is the default browser font size.
 
-NOTE: In media queries rem and em are not affected by the root font-size settings. 
-      It means that 1rem or 1em are always equal to the font-size default browser value, which is 16px.
-
-Why using em instead of rem? Because rem's failed to work as intended in some browsers
 */
 
 @mixin respond($breakpoint) {
